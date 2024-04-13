@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import DropDown from "../DropDown/DropDown"
 import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
@@ -67,13 +67,27 @@ export const TableRowStyled = styled(TableRow)`
     text-align: center;
   }
 `
+const fillGradient = keyframes`
+  from {
+    background-size: 0% 100%;
+    background-position: 0 100%;
+  }
+  to {
+    background-size: 100% 100%;
+    background-position: 0 100%;
+  }
+`
+
 export const TableCellStyled = styled(TableCell)<{
   $width?: number
   $color?: string
 }>`
   background: linear-gradient(
-    to left,
+    to right,
     ${(props) => `${props.$color} ${props.$width}%`},
     #ffffff ${(props) => props.$width}% 100%
   );
+  background-size: ${(props) => props.$width}% 100%; // Initial background size set to $width
+  background-repeat: no-repeat;
+  animation: ${fillGradient} 1.5s ease-out forwards;
 `
