@@ -20,8 +20,8 @@ The Shopper Dashborad is a web application that visualizes data using two differ
 clone project to local machine
 
 ```bash
-git clone https://yourrepositoryurl.com/project.git
-cd project
+git clone https://github.com/Evyatar-Menczer/shopper-dashboard.git
+cd shopper-dashboard
 ```
 
 Or - download the project as a ZIP file and extract it.
@@ -45,6 +45,8 @@ Or - download the project as a ZIP file and extract it.
    ```bash
    npm start
    ```
+
+   Now the server is up and running including data-base setup.
 ---
 
 ### Setting Up the Client (Frontend)
@@ -63,6 +65,6 @@ Or - download the project as a ZIP file and extract it.
    ```bash
    npm start
    ```
-   This should open up a browser window with the app running. If it doesn't, you can manually visit `http://localhost:3000` in your browser.
+   This should open up a browser window with the app running. If it doesn't, you can manually go to `http://localhost:3000`.
 ---
 
