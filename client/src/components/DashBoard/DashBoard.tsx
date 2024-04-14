@@ -3,10 +3,10 @@ import Summary from "../Summary/Summary"
 import DataTable from "../DataTable/DataTable"
 import { Container } from "./styles"
 import { useEffect, useState } from "react"
-import { getAllData } from "../../api/sql"
+import { getAllData } from "../../api/sales"
 
 const DashBoard = () => {
-  const [dbData, setDbData] = useState<any>(null)
+  const [dbData, setDbData] = useState<any>([])
   useEffect(() => {
     fetchData()
   }, [])

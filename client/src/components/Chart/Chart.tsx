@@ -12,7 +12,7 @@ import {
 import { metricOptions, titleToSnakeCase } from "../../utils/utils"
 import { aggregateDataByMetric } from "../../utils/chart-utils"
 import { DataItem } from "../../utils/types"
-import { getDataByCategory } from "../../api/sql"
+import { getDataByMetric } from "../../api/sales"
 
 const defaultOptions: Highcharts.Options = {
   title: { text: "" },
@@ -41,7 +41,7 @@ const Chart: FC<ChartProps> = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const metricNames = metrics.map((metric) => titleToSnakeCase(metric))
-      const { data } = await getDataByCategory(metricNames)
+      const { data } = await getDataByMetric(metricNames)
       setDbData(data)
     }
     fetchData()

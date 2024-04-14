@@ -7,6 +7,16 @@ const allowedMetrics = new Set([
   "date",
 ])
 
+// A middle ware function that validates the api key for all sales requests.
+// I didn't implement the actual validation logic here, just a placeholder.
+export const apiKeyValidation = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  next()
+}
+
 export const validateSalesMetrics = (
   req: Request,
   res: Response,

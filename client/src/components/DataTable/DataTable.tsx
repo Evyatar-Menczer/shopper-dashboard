@@ -42,13 +42,12 @@ const DataTable: FC<TableProps> = ({ gridArea, dbData }) => {
   const [endFrame, setEndFrame] = useState<string>("")
   const [cvrMetric, setCvrMetric] = useState<TableMetric>("product_views")
   const [categories, setCategories] = useState<string[]>([])
-  // const [totalsRatio, setTotalsRatio] = useState<Record<string, any>>({})
 
   const { tableData, totalsData } = useDataState()
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    if (!dbData) return
+    if (!dbData.length) return
     const tableData = processTableData(dbData, cvrMetric, totalsData)
     dispatch(setTableData(tableData))
 

@@ -15,7 +15,6 @@ const createTable = async (db: any) => {
     if (err) {
       console.error(err.message)
     } else {
-      console.log("Table created")
       insertData(categoriesToInsert)
     }
   })
@@ -33,7 +32,7 @@ const insertData = (categories: string) => {
     })
   })
   insert.finalize(() => {
-    console.log("Data inserted")
+    console.log("Data base is set up!")
   })
 }
 
